@@ -1,5 +1,5 @@
 # CGFormer
-The official PyTorch implementation of the CVPR 2023 paper "Contrastive Grouping with Transformer for Referring Image Segmentation".(Coming Soon!)
+The official PyTorch implementation of the CVPR 2023 paper "Contrastive Grouping with Transformer for Referring Image Segmentation". (Coming Soon!)
 
 Created by Jiajin Tang, Ge Zheng, Cheng Shi, and **Sibei Yang**
 
