@@ -5,7 +5,7 @@ This paper first introduces learnable query tokens to represent objects and then
 
 ## Framework
 <p align="center">
-  <img src="image/framework.jpg" width="600">
+  <img src="image/framework.jpg" width="1000">
 </p>
 
 ## Preparation
