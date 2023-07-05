@@ -2,3 +2,5 @@
 /wandb/**
 **/__pycache__
 /train_open.py
+/.vscode
+/.gitignore

@@ -1,0 +1,10 @@
+transformers
+wandb
+lmdb
+pyarrow
+regex
+ftfy
+loguru
+pycocotools
+matplotlib
+tqdm
