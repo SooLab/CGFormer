@@ -1,13 +1,13 @@
 DATA:
   dataset: refcoco
   train_split: train
-  train_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/train.lmdb
+  train_lmdb: path/refcoco/train.lmdb
   val_split: val
-  val_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/val.lmdb
-  mask_root: /public/home/tangjj/pycharm/data/cris/masks/refcoco
+  val_lmdb: path/val.lmdb
+  mask_root: path/masks/refcoco
 TRAIN:
   swin_type: base
-  swin_pretrain: /public/home/tangjj/pycharm/cvpr2024/model/swin/swin_base_window12.pth
+  swin_pretrain: path/swin_base_window12.pth
   bert: bert-base-uncased
   mha: '8-8-8-8'
   input_size: 480
@@ -36,7 +36,7 @@ TRAIN:
   output_folder: exp/refcoco/
   save_freq: 1
   weight:
-  resume: /storage/data/tangjj/ris/BestFormer/exp/refcoco/10-6-seed/best_model.pth
+  resume: 
   evaluate: True 
 Distributed:
   dist_url: tcp://localhost:12345
@@ -47,5 +47,5 @@ Distributed:
 TEST:
   window12: True # if use window12 pretrained for training, testing set true
   test_split: val
-  test_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/val.lmdb
+  test_lmdb: path/refcoco/val.lmdb
   visualize: False

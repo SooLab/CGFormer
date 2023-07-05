@@ -1,17 +1,17 @@
 DATA:
   dataset: refcoco
   train_split: train_seen
-  train_lmdb: /public/home/tangjj/pycharm/data/cris/open_lmdb/refcoco/train_seen.lmdb
+  train_lmdb: path/open_lmdb/refcoco/train_seen.lmdb
   val_seen_split: val_seen
-  val_seen_lmdb: /public/home/tangjj/pycharm/data/cris/open_lmdb/refcoco/val_seen.lmdb
+  val_seen_lmdb: path/open_lmdb/refcoco/val_seen.lmdb
   val_unseen_split: val_unseen
-  val_unseen_lmdb: /public/home/tangjj/pycharm/data/cris/open_lmdb/refcoco/val_unseen.lmdb
-  mask_root: /public/home/tangjj/pycharm/data/cris/masks/refcoco
+  val_unseen_lmdb: path/open_lmdb/refcoco/val_unseen.lmdb
+  mask_root: path/masks/refcoco
 TRAIN:
   swin_type: base
-  swin_pretrain: ../LAVT-RIS/pretrained_weights/swin_base_patch4_window12_384_22k.pth
+  swin_pretrain: path/swin_base_patch4_window12_384_22k.pth
   bert: bert-base-uncased
-  clip_pretrain: /storage/data/tangjj/ris/CRIS/pretrain/ViT-L-14-336px.pt
+  clip_pretrain: path/pretrain/ViT-L-14-336px.pt
   mha: '8-8-8-8'
   input_size: 480
   clip_dim: 768
@@ -39,8 +39,8 @@ TRAIN:
   exp_name: open
   output_folder: exp/refcoco
   save_freq: 1
-  weight:  # path to initial weight (default: none)
-  resume: #/public/home/tangjj/pycharm/ris/BestFormer/exp/refcoco/10-8-fusion/best_model.pth
+  weight:  
+  resume: 
   evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
 Distributed:
   dist_url: tcp://localhost:12345
@@ -51,5 +51,5 @@ Distributed:
 TEST:
   window12: True # if use window12 pretrained for training, testing set true
   test_split: test_unseen
-  test_lmdb: /public/home/tangjj/pycharm/data/cris/open_lmdb/refcoco/test_unseen.lmdb
+  test_lmdb: path/refcoco/test_unseen.lmdb
   visualize: False
