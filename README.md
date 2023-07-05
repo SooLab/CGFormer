@@ -3,3 +3,14 @@ The official PyTorch implementation of the CVPR 2023 paper "Contrastive Grouping
 
 This paper first introduces learnable query tokens to represent objects and then alternately queries linguistic features and groups visual features into the query tokens for object-aware cross-modal reasoning. CGFormer achieves cross-level interaction by jointly updating the query tokens and decoding masks in every two consecutive layers. In addition, we introduce new splits on datasets for evaluating generalization for referring image segmentation models.
 
+## Framework
+<p align="center">
+  <img src="image/framework.jpg" width="600">
+</p>
+## Preparation
+
+1. Environment
+   - [PyTorch](www.pytorch.org) 
+   - Other dependencies in `requirements.txt`
+2. Datasets
+   - The detailed instruction is in [prepare_datasets](data/READEME.md)
