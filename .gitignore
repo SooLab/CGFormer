@@ -3,4 +3,5 @@
 **/__pycache__
 /train_open.py
 /.vscode
-/.gitignore
+config/config.yaml
+config/open.yaml

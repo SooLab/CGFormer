@@ -18,7 +18,7 @@ This paper first introduces learnable query tokens to represent objects and then
 3. Pretrained weights
    - [Swin-Base-window12](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth)
 
-## Quick Start
+## Train and Test (RIS)
 
 This implementation only supports **multi-gpu**, **DistributedDataParallel** training, which is faster and simpler; single-gpu or DataParallel training is not supported. Besides, the evaluation only supports single-gpu mode.
 
@@ -34,3 +34,23 @@ CUDA_VISIBLE_DEVICES=0 python -u test.py \
       --config config/refcoco/config.yaml \
       --opts TEST.test_split val \
              TEST.test_lmdb path/val.lmdb
+```
+## License
+
+This project is under the MIT license. See [LICENSE](LICENSE) for details.
+
+
+## Citation
+If you find our work useful in your research, please consider citing:
+```
+@InProceedings{Tang_2023_CVPR,
+    author    = {Tang, Jiajin and Zheng, Ge and Shi, Cheng and Yang, Sibei},
+    title     = {Contrastive Grouping With Transformer for Referring Image Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {23570-23580}
+}
+```
+
+Some code changes come from [CRIS](https://github.com/DerrickWang005/CRIS.pytorch/tree/master) and [LAVT](https://github.com/yz93/LAVT-RIS).
