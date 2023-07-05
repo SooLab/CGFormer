@@ -1,0 +1,51 @@
+DATA:
+  dataset: refcoco
+  train_split: train
+  train_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/train.lmdb
+  val_split: val
+  val_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/val.lmdb
+  mask_root: /public/home/tangjj/pycharm/data/cris/masks/refcoco
+TRAIN:
+  swin_type: base
+  swin_pretrain: /public/home/tangjj/pycharm/cvpr2024/model/swin/swin_base_window12.pth
+  bert: bert-base-uncased
+  mha: '8-8-8-8'
+  input_size: 480
+  word_len: 20
+  word_dim: 768
+  vis_dim: 512
+  num_token: 2
+  token_dim: 512
+  sync_bn: True
+  dropout: 0.
+  fusion_drop: 0.
+  workers: 32  # data loader workers
+  workers_val: 8
+  batch_size: 64  # batch size for training
+  batch_size_val: 16  # batch size for validation during training, memory and speed tradeoff
+  start_epoch: 0
+  epochs: 50
+  lr_backbone: 5.e-5
+  lr_text_encoder: 5.e-5
+  lr: 1.e-4
+  weight_decay: 1.e-4
+  amsgrad: True
+  manual_seed: 
+  print_freq: 100
+  exp_name: cgformer
+  output_folder: exp/refcoco/
+  save_freq: 1
+  weight:
+  resume: /storage/data/tangjj/ris/BestFormer/exp/refcoco/10-6-seed/best_model.pth
+  evaluate: True 
+Distributed:
+  dist_url: tcp://localhost:12345
+  dist_backend: 'nccl'
+  multiprocessing_distributed: True
+  world_size: 1
+  rank: 0
+TEST:
+  window12: True # if use window12 pretrained for training, testing set true
+  test_split: val
+  test_lmdb: /public/home/tangjj/pycharm/data/cris/lmdb/refcoco/val.lmdb
+  visualize: False
